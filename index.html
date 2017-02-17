@@ -1,17 +1,21 @@
 <html ng-app="app">
 <head>
-<script type="text/javascript" src="./controller/myCtrl.js"></script>
+<link href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css" rel="stylesheet" />
+<!--<script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+<script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>-->
+<script src="node_modules/angular/angular.js"></script>
 
-<script type="text/javascript" src="./controller/myCtrl.js"></script>
-<script type="text/javascript" src="./controller/myCtrlSpec.js"></script>
 </head>
 <body>
 <div ng-controller="myCtrl as c">
-<span ng-bind="name"></span>
+    Priciple<input type=text ng-model=c.prin>
+    Rate<input type=text ng-model=c.rate>
+    Time<input type=text ng-model=c.time>
+    <button ng-click="c.calculate();">Result</button>
+    <br>Interest<span ng-bind="c.interest"></span><br>
+    Total Amount<span ng-bind="c.amount"></span>
 </div>
-
-<script type="text/javascript">
-angular.module("app",[]);
-</script>
+<script src="controller/myCtrl.js"></script>
+<script src="service/myService.js"></script>
 </body>
 </html>
