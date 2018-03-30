@@ -15,4 +15,11 @@ describe('myService',function(){
           expect(myService.calculateAmount(1,100)).toBe(101);
       })
     })
+    describe('generateRandomData()',function(){
+        it('should return some random number',function(){
+            var randomNum = myService.generateRandomData();
+            console.log(randomNum);
+            expect(randomNum).toBe(randomNum);
+        })
+      })
 })

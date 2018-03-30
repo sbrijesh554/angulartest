@@ -8,7 +8,9 @@ module.exports = function(config) {
       'controller/*.js',
       'controller/*.spec.js',
       'service/*.js',
-      'service/*.spec.js'
+      'service/*.spec.js',
+      'directive/*.js',
+      'directive/*.spec.js'
     ],
     exclude: [
     ],

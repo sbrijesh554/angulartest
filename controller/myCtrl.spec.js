@@ -12,7 +12,11 @@ describe("myCtrl", function(){
       function(){
           console.log("In Amount fn");
       }
-    );  
+    );
+    spyOn(myServiceMock,'generateRandomData').and.returnValue(
+          Math.random()*1000)
+      
+       
       $controller = _$controller_('myCtrl', {myService : myServiceMock});
     }));
 
@@ -26,4 +30,13 @@ describe("myCtrl", function(){
           expect(myServiceMock.calculateInterest).toHaveBeenCalled();
         })
     })
+    describe("getData()", function(){
+      it("should fetch some random number from service" , function(){     
+        var data = [];
+        var n = myServiceMock.generateRandomData();
+        data.push({num : n});    
+        console.log(n, data);
+        expect(data[0]).toEqual(jasmine.objectContaining({num : n}))
+      })
+  })
 });
